@@ -1,8 +1,7 @@
 # My project update
 
-1. Created the skeleton of the home page
-2. Captured user input and used it to fetch companies from the Api endpoint provided in alphavantage.co
-3. Dealt with possible errors and respectively created an error message
+1. Styled home page
+2. Created dynamic route to company's page
 
 ### `npm start`
 
