@@ -1,18 +1,12 @@
-# My project update
+# My final update
 
-1. Styled home page
-2. Created dynamic route to company's page
+1. Added a Navbar
+2. Added a clear button
+3. Improved the overall CSS
+4. Used symbols from antd library
 
-### `npm start`
+# Follow these steps
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone my repo in your computer
+2. Run 'npm install' in your computer
+3. Then finally use 'npm start'

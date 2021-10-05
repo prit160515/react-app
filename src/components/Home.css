@@ -1,4 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .home {
+  background-color: #009879;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -21,13 +27,13 @@
 
 .input-bar {
   width: 100%;
-  height: 70px;
+  height: 65px;
   display: flex;
   border-radius: 10px;
 }
 
 .input-bar input {
-  width: 90%;
+  width: 80%;
   height: 100%;
   font-size: 25px;
   background-color: white;
@@ -37,7 +43,8 @@
 }
 
 .input-bar .search-icon {
-  color: darkcyan;
+  padding-top: 11px;
+  color: #009879;
   font-size: 30px;
   background-color: white;
   border-top: 2px solid #444d56;
@@ -45,7 +52,23 @@
   border-right: 2px solid #444d56;
   box-sizing: border-box;
   height: 100%;
-  width: 10%;
+  width: 8%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.input-bar .clear-icon {
+  padding-top: 11px;
+  color: #009879;
+  font-size: 30px;
+  background-color: white;
+  border-top: 2px solid #444d56;
+  border-bottom: 2px solid #444d56;
+  border-right: 2px solid #444d56;
+  box-sizing: border-box;
+  height: 100%;
+  width: 12%;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
