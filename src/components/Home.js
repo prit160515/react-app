@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 class Home extends Component {
@@ -70,21 +71,50 @@ class Home extends Component {
     }
   };
 
+  getCompanyElement = (company, key) => {
+    const sym = company["1. symbol"];
+    const c_name = company["2. name"];
+    //console.log(sym);
+
+    return (
+      <Link key={sym} to={`/company/${sym}`}>
+        <div className="company-element">
+          <div className="symbol-name">{sym}</div>
+          <div className="comp-name">{c_name}</div>
+        </div>
+      </Link>
+    );
+  };
+
   render() {
     return (
       <div className="home">
         <div className="intro-text">
-          lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          <div>Stocks Search</div>
         </div>
 
-        <div className="input-bar">
-          <input
-            type="text"
-            ref={this.textInput}
-            placeholder="Enter symbol/company name"
-          />
-          <div type="button" className="search-icon" onClick={this.Search}>
-            SH
+        <div className="search-container">
+          <div className="input-bar">
+            <input
+              type="text"
+              ref={this.textInput}
+              placeholder="Enter symbol/company name"
+            />
+            <div type="button" className="search-icon" onClick={this.Search}>
+              SH
+            </div>
+          </div>
+
+          <div className="companies">
+            {this.state.loading ? (
+              <div>Loading Companies...</div>
+            ) : this.state.search_results.length > 1 ? (
+              this.state.search_results.map((company, key) =>
+                this.getCompanyElement(company, key)
+              )
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </div>
