@@ -7,6 +7,7 @@ class Company extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
       details: {},
     };
   }
@@ -77,60 +78,66 @@ class Company extends Component {
   render() {
     return (
       <div className="company-page">
-        <div className="c-details">
-          {/* A quick look at the company's current price and the relative change */}
-          <div className="c-price">
-            <div className="stock-name">{this.state.details["01. symbol"]}</div>
-            <div className="sub-stock-name">
-              <div className="open-price">
-                {this.state.details["05. price"]}&nbsp;&nbsp;
+        {this.state.loading ? (
+          <div className="loading">Loading data...</div>
+        ) : (
+          <div className="c-details">
+            {/* A quick look at the company's current price and the relative change */}
+            <div className="c-price">
+              <div className="stock-name">
+                {this.state.details["01. symbol"]}
               </div>
-              <div className="price-change">
-                {this.state.details["10. change percent"]}
-                {this.state.details["05. price"] >
-                this.state.details["02. open"] ? (
-                  <CaretUpOutlined className="icon-up" />
-                ) : (
-                  <CaretDownOutlined className="icon-down" />
-                )}
+              <div className="sub-stock-name">
+                <div className="open-price">
+                  {this.state.details["05. price"]}&nbsp;&nbsp;
+                </div>
+                <div className="price-change">
+                  {this.state.details["10. change percent"]}
+                  {this.state.details["05. price"] >
+                  this.state.details["02. open"] ? (
+                    <CaretUpOutlined className="icon-up" />
+                  ) : (
+                    <CaretDownOutlined className="icon-down" />
+                  )}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Company's Data in the form of a Table */}
-          <div className="c-table">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Details</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Opening Price</td>
-                  <td>{this.state.details["02. open"]}</td>
-                </tr>
-                <tr>
-                  <td>Max Price</td>
-                  <td>{this.state.details["03. high"]}</td>
-                </tr>
-                <tr>
-                  <td>Min Price</td>
-                  <td>{this.state.details["04. low"]}</td>
-                </tr>
-                <tr>
-                  <td>Volume</td>
-                  <td>{this.state.details["06. volume"]}</td>
-                </tr>
-                <tr>
-                  <td>Latest Trading Day</td>
-                  <td>{this.state.details["07. latest trading day"]}</td>
-                </tr>
-              </tbody>
-            </table>
+            {/* Company's Data in the form of a Table */}
+            <div className="c-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Details</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Opening Price</td>
+                    <td>{this.state.details["02. open"]}</td>
+                  </tr>
+                  <tr>
+                    <td>Max Price</td>
+                    <td>{this.state.details["03. high"]}</td>
+                  </tr>
+                  <tr>
+                    <td>Min Price</td>
+                    <td>{this.state.details["04. low"]}</td>
+                  </tr>
+                  <tr>
+                    <td>Volume</td>
+                    <td>{this.state.details["06. volume"]}</td>
+                  </tr>
+                  <tr>
+                    <td>Latest Trading Day</td>
+                    <td>{this.state.details["07. latest trading day"]}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }

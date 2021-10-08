@@ -13,16 +13,17 @@
 }
 
 .search-container {
-  width: 65%;
+  width: 60%;
   text-align: center;
 }
 
 .intro-text {
-  height: 16%;
+  height: auto;
   color: black;
   text-align: center;
   vertical-align: middle;
   font-size: 70px;
+  margin: 0px 20px;
 }
 
 .input-bar {
@@ -33,7 +34,7 @@
 }
 
 .input-bar input {
-  width: 80%;
+  width: 90%;
   height: 100%;
   font-size: 25px;
   background-color: white;
@@ -52,14 +53,15 @@
   border-right: 2px solid #444d56;
   box-sizing: border-box;
   height: 100%;
-  width: 8%;
+  width: auto;
+  padding: 10px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
 }
 
 .input-bar .clear-icon {
-  padding-top: 11px;
+  padding: 11px 8px;
   color: #009879;
   font-size: 30px;
   background-color: white;
@@ -68,7 +70,7 @@
   border-right: 2px solid #444d56;
   box-sizing: border-box;
   height: 100%;
-  width: 12%;
+  width: auto;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -123,4 +125,15 @@ a:hover {
 
 .comp-name {
   width: 50%;
+}
+
+@media only screen and (max-width: 700px) {
+  .input-bar .clear-icon {
+    display: none;
+  }
+
+  .intro-text {
+    padding-right: 15px;
+    font-size: 45px;
+  }
 }
